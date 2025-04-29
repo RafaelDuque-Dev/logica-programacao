@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EX002</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+      font-size: 4em;
+    }
+    p {
+      font-size: 2em;
+    }
+    input {
+      font-size: 2em;
+      padding: 10px;
+      margin-top: 20px;
+      border: 2px solid #2c3e50;
+      border-radius: 10px;
+    }
+    button {
+      font-size: 2em;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ola!</h1>
+  <p id="menssagem">Seja bem-vindo ao meu site!</p>
+  <input type="text" id="inputName" placeholder="Digite o seu nome:" />
+  <button onclick="boasVindas()">Enviar</button>
+
+  <script>
+    function boasVindas() {
+      const inputName = document.getElementById("inputName");
+      let name = inputName.value.trim(); // Remove espaços em branco no início e no fim
+      //console.log(name);
+
+      let menssagem = document.getElementById("menssagem");
+      if (name === "") {
+        alert("Por favor, digite o seu nome.");
+      } else {
+        menssagem.innerHTML = `Seja bem-vindo(a), ${name}!`;
+        inputName.value = ""; // Limpa o campo de entrada após enviar
+      }
+
+    }
+  </script>
+</body>
+</html>
