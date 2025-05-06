@@ -46,16 +46,28 @@
 
   <script>
     function somar() {
-      num1 = document.getElementById('num1');
-      num2 = document.getElementById('num2');
-      primeiroNumero = Number(num1.value).trim();
-      segundoNumero = Number(num2.value).trim();
+      const num1 = document.getElementById('num1');
+      const num2 = document.getElementById('num2');
+      let primeiroNumero = Number(num1.value.trim());
+      let segundoNumero = Number(num2.value.trim());
       console.log(primeiroNumero, segundoNumero);
-
-      if (num1.value == "" || num2.valeu == "") {
+      
+      if (num1.value === "" || num2.value === "") {
         alert("Preencha os dois campos!");
         return;
-      } 
+      }
+      if (isNaN(primeiroNumero) || isNaN(segundoNumero)) {
+        alert("Digite apenas números!");
+        return;
+      }
+
+      let resultado = primeiroNumero + segundoNumero;
+      console.log(resultado);
+
+      document.getElementById("resultado").textContent = `A soma de ${primeiroNumero} + ${segundoNumero} é igual a ${resultado}`;
+      num1.value = "";
+      num2.value = "";
+      num1.focus();
     }
   </script>
 </body>
